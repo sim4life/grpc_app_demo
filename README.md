@@ -1,2 +1,2 @@
-# grpc_app_demo
+# gRPC app demo
 A bit thorough app demo using gRPC
