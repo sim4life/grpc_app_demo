@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package service;
+
+// option go_package = "internal/gRPC/service";
+
+// import "grpc_app_demo/api/gRPC/domain/repository.proto";
+
+option go_package = "github.com/sim4life/grpc_app_demo/internal/gRPC/service";
+
+// option go_package = "github.com/sim4life/grpc_app_demo/service";
+
+import "domain/repository.proto";
+
+//RepositoryService Definition
+service RepositoryService {
+	rpc add (domain.Repository) returns (AddRepositoryResponse);
+}
+ 
+message AddRepositoryResponse {
+	domain.Repository addedRepository = 1;
+	Error error = 2;
+}
+message Error {
+	string code = 1;
+	string message = 2;
+}
